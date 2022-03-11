@@ -16,7 +16,7 @@ ReactDOM.render(
           <Route path="/" element={ <App />} >
               <Route path="/" element={<Main />} >
                   <Route index element={<Show />} />
-                  <Route path="/PageA:Id" element={<PageA />} >
+                  <Route path="/PageA" element={<PageA />} >
 
                   </Route>
                   <Route path="/PageB:Id" element={<PageB />} />
