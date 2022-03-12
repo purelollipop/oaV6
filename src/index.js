@@ -8,18 +8,32 @@ import Main from "./pages/main.tsx";
 import Logo from "./pages/logo.tsx";
 import NotFind from "./pages/notFind.tsx";
 import Show from "./pages/show.tsx"
-import PageA from "./pages/pageA.tsx"
-import PageB from "./pages/pageB.tsx"
+import PageC from "./pages/pageC.tsx"
+const PageA = React.lazy(() => import("./pages/pageA.tsx"));
+const PageB = React.lazy(() => import("./pages/pageB.tsx"));
+
+// const PageC = React.lazy(() => import("./pages/pageC.tsx"));
+// import PageB from "./pages/pageB.tsx"
+
 ReactDOM.render(
   <BrowserRouter>
       <Routes>
           <Route path="/" element={ <App />} >
               <Route path="/" element={<Main />} >
                   <Route index element={<Show />} />
-                  <Route path="/PageA" element={<PageA />} >
+                  <Route path="/PageA" element={
+                      <React.Suspense fallback={<>...</>}>
+                          <PageA />
+                      </React.Suspense>
+                  } >
 
                   </Route>
-                  <Route path="/PageB:Id" element={<PageB />} />
+                  <Route path="/PageB/*" element={
+                      <React.Suspense fallback={<>...</>}>
+                          <PageB />
+                      </React.Suspense>
+                  } />
+                  <Route path="/PageC" element={<PageC />} />
               </Route>
               <Route path="/logo" element={<Logo />} />
               <Route path="*" element={<NotFind />} />

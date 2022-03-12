@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink, Outlet, useNavigate} from "react-router-dom";
-import PageA from "./pageA"
-import PageB from "./pageB"
+
 interface props {
 
 }
@@ -31,7 +30,16 @@ const Main: React.FC<props> = (props) => {
                         margin: "1rem 0",
                         color: isActive ? "red" : "",
                     };
-                }} to={`/PageB${b}`}>PageB</NavLink>
+                }} to={`/PageB`}>PageB</NavLink>
+            </nav>
+            <nav>
+                <NavLink style={({ isActive }) => {
+                    return {
+                        display: "block",
+                        margin: "1rem 0",
+                        color: isActive ? "red" : "",
+                    };
+                }} to={`/PageC`}>PageC</NavLink>
             </nav>
             <button onClick={clickFunA}>pageA</button>
         </div>
