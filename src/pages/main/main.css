@@ -1,0 +1,65 @@
+/*  ant 自带*/
+#components-layout-demo-custom-trigger .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+    color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
+.ant-layout{
+    height: 100vh;
+}
+/* 导航栏 */
+.scrollCla{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.scrollCla>:first-child{
+    width: 20px;
+    /*border-left: 1px solid silver;*/
+}
+.scrollCla>:last-child{
+    width: 20px;
+}
+.scrollCla>:nth-child(2){
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 5px white solid;
+    background-color: #F0F2F5;
+    overflow: hidden;
+    position: relative;
+}
+.scrollDiv{
+    position: absolute;
+    display: flex;
+    flex-flow: nowrap row;
+    line-height: 30px;
+    top: 15px;
+    transition: left 0.1s linear;
+}
+.scrollDiv>div{
+    /*box-sizing: border-box;*/
+    width: 100px;
+    text-align: center;
+    border: 1px black solid;
+    margin: 0px 5px;
+}
+
+/* 二级菜单 */
+.activeCla{
+    color: red;
+}
